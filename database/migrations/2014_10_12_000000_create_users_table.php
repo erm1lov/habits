@@ -1,10 +1,11 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHabitsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +14,15 @@ class CreateHabitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('habits', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('photo_name');
-            $table->string('photo_ext');
-            $table->boolean('is_active')->default(true);
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->string('lang');
+            $table->rememberToken();
             $table->timestamps();
-
-            $table->index(['lang', 'is_active']);
         });
     }
 
@@ -33,6 +33,6 @@ class CreateHabitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('habits');
+        Schema::dropIfExists('users');
     }
 }

@@ -1,4 +1,4 @@
-Habits API catalogue by Tim Ermilov (driven by Laravel 8)
+Habits API catalog by Tim Ermilov (driven by Laravel 8)
 -
 
 Clone repo and run 
@@ -10,7 +10,7 @@ Clone repo and run
 > php artisan db:seed
 >
 
-Make a get request at /api/habits to see the catalogue
+Make a get request at /api/habits to see the catalog
 
 Params available:
 - 
